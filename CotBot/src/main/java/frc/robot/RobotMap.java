@@ -43,7 +43,7 @@ public class RobotMap {
     public static int frontWheels = 12;
   //sensors
     //actuators
-    public static int leftScissorPort;
-    public static int rightScissorPort;
+    public static int frontScissorPort = 1;
+    public static int backScissorPort = 2;
 
 }
