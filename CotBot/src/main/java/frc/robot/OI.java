@@ -60,9 +60,22 @@ public class OI {
 		JoystickButton rightBumper = new JoystickButton(gamepad, 6);
 
 		JoystickButton gameLeftTrigger = new JoystickButton(gamepad, 7);
-		JoystickButton gameRightTrigger = new JoystickButton(gamepad, 8);
-		
+    JoystickButton gameRightTrigger = new JoystickButton(gamepad, 8);
+  
   }
+
+  public static double getYInput() {
+		if (Math.abs(stick1.getY()) > deadzone) {
+			return -stick1.getY();
+		}
+		return 0;
+	}
+	public static double getYInput2() {
+		if (Math.abs(stick2.getY()) > deadzone) {
+			return -stick2.getY();
+		}
+		return 0;
+	}
 
   //// TRIGGERING COMMANDS WITH BUTTONS
   // Once you have a button, it's trivial to bind it to a button in one of
