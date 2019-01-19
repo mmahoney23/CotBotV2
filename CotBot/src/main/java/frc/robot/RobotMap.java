@@ -41,6 +41,8 @@ public class RobotMap {
     public static int backForwardRight = 11;
     //wheels on front
     public static int frontWheels = 12;
+    //rhino
+    public static int rhinoHorn = 13;
   //sensors
     //actuators
     public static int frontScissorPort = 1;

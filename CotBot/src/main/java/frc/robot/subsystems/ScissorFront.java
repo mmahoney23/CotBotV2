@@ -20,13 +20,13 @@ public class ScissorFront extends Subsystem {
       return !frontActuatorLimit.get();
   }
 
-  public void backScissorDown(){
+  public void frontScissorDown(){
       scissorFront.set(0.5);
   }
-  public void backScissorUp(){
+  public void frontScissorUp(){
       scissorFront.set(-0.5);
   }
-  public void backScissorStop(){
+  public void frontScissorStop(){
       scissorFront.set(0);
   }
 

@@ -41,11 +41,11 @@ public class OI {
 		JoystickButton leftThree = new JoystickButton(stick1, 3);
 		JoystickButton rightThree = new JoystickButton(stick2, 3);
 		
-		JoystickButton butt5 = new JoystickButton(stick1, 5);
-		JoystickButton butt6 = new JoystickButton(stick2, 4);
+		JoystickButton button5 = new JoystickButton(stick1, 5);
+		JoystickButton button6 = new JoystickButton(stick2, 4);
 		
-		JoystickButton butt7 = new JoystickButton(stick1, 2);
-		JoystickButton butt8 = new JoystickButton(stick2, 2);
+		JoystickButton button7 = new JoystickButton(stick1, 2);
+		JoystickButton button8 = new JoystickButton(stick2, 2);
 		
 		JoystickButton joy8 = new JoystickButton(stick1,8);
 		JoystickButton joy9 = new JoystickButton(stick1,9);
