@@ -7,6 +7,10 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.*;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -20,9 +24,45 @@ public class OI {
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
 
+  static Joystick stick1 = new Joystick(0);
+  static Joystick stick2 = new Joystick(1);
+  static Joystick gamepad = new Joystick(2);
+
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
+
+  static double deadzone = 0.1;
+
+  public OI(){
+    JoystickButton leftTrigger = new JoystickButton(stick1, 1);
+		JoystickButton rightTrigger = new JoystickButton(stick2, 1);
+		
+		JoystickButton leftThree = new JoystickButton(stick1, 3);
+		JoystickButton rightThree = new JoystickButton(stick2, 3);
+		
+		JoystickButton butt5 = new JoystickButton(stick1, 5);
+		JoystickButton butt6 = new JoystickButton(stick2, 4);
+		
+		JoystickButton butt7 = new JoystickButton(stick1, 2);
+		JoystickButton butt8 = new JoystickButton(stick2, 2);
+		
+		JoystickButton joy8 = new JoystickButton(stick1,8);
+		JoystickButton joy9 = new JoystickButton(stick1,9);
+		
+		JoystickButton y = new JoystickButton(gamepad, 4);
+		JoystickButton a = new JoystickButton(gamepad, 2);
+		
+		JoystickButton x = new JoystickButton(gamepad, 1);
+		JoystickButton b = new JoystickButton(gamepad, 3);
+		
+		JoystickButton leftBumper = new JoystickButton(gamepad, 5);
+		JoystickButton rightBumper = new JoystickButton(gamepad, 6);
+
+		JoystickButton gameLeftTrigger = new JoystickButton(gamepad, 7);
+		JoystickButton gameRightTrigger = new JoystickButton(gamepad, 8);
+		
+  }
 
   //// TRIGGERING COMMANDS WITH BUTTONS
   // Once you have a button, it's trivial to bind it to a button in one of
