@@ -61,7 +61,12 @@ public class OI {
 
 		JoystickButton gameLeftTrigger = new JoystickButton(gamepad, 7);
     JoystickButton gameRightTrigger = new JoystickButton(gamepad, 8);
-  
+
+    leftTrigger.whenPressed(new rhinoOut());
+    leftTrigger.whenReleased(new rhinoStop());
+    
+    rightTrigger.whenPressed(new rhinoIn());
+    rightTrigger.whenReleased(new rhinoStop());
   }
 
   public static double getYInput() {
