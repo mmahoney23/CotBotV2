@@ -13,11 +13,15 @@ public class ScissorBack extends Subsystem {
   // here. Call these from Commands.
   public static Talon scissorBack = new Talon(RobotMap.backUpDown);
 
-  static DigitalInput backActuatorLimit = new DigitalInput(RobotMap.backScissorPort);
+  static DigitalInput backActuatorLimitUp = new DigitalInput(RobotMap.backScissorPortOut);
+  static DigitalInput backActuatorLimitDown = new DigitalInput(RobotMap.backScissorPortIn);
 
 
-  public static boolean isLimitReached(){
-      return !backActuatorLimit.get();
+  public static boolean isLimitUpReached(){
+      return !backActuatorLimitUp.get();
+  }
+  public static boolean isLimitDownReached(){
+      return !backActuatorLimitDown.get();
   }
 
   public void backScissorDown(){

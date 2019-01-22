@@ -3,28 +3,33 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.subsystems.ScissorFront;
 
 /**
  * An example command.  You can replace me with your own command.
  */
-public class scissorsDown extends Command {
-  public scissorsDown() {
+public class climbDownFront extends Command {
+  public climbDownFront() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.scissor1);
-    requires(Robot.scissor2);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-      setTimeout(2);
+    if(ScissorFront.isLimitDownReached()){
+      Robot.scissor1.frontScissorStop();
+      isFinished();
+    }
+    else{
+      //the rest of the code runs
+    }
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
       Robot.scissor1.frontScissorDown();
-      Robot.scissor2.backScissorDown();
   }
 
   // Make this return true when this Command no longer needs to run execute()

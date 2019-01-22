@@ -13,11 +13,15 @@ public class ScissorFront extends Subsystem {
   // here. Call these from Commands.
   public static Talon scissorFront = new Talon(RobotMap.frontUpDown);
 
-  static DigitalInput frontActuatorLimit = new DigitalInput(RobotMap.frontScissorPort);
+  static DigitalInput frontActuatorLimitUp = new DigitalInput(RobotMap.frontScissorPortOut);
+  static DigitalInput frontActuatorLimitDown = new DigitalInput(RobotMap.frontScissorPortIn);
 
 
-  public static boolean isLimitReached(){
-      return !frontActuatorLimit.get();
+  public static boolean isLimitUpReached(){
+      return !frontActuatorLimitUp.get();
+  }
+  public static boolean isLimitDownReached(){
+      return !frontActuatorLimitDown.get();
   }
 
   public void frontScissorDown(){

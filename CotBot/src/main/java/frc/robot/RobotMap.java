@@ -45,7 +45,9 @@ public class RobotMap {
     public static int rhinoHorn = 13;
   //sensors
     //actuators
-    public static int frontScissorPort = 1;
-    public static int backScissorPort = 2;
+    public static int frontScissorPortOut = 1;
+    public static int frontScissorPortIn = 2;
+    public static int backScissorPortOut = 3;
+    public static int backScissorPortIn = 4;
 
 }

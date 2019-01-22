@@ -8,8 +8,8 @@ import frc.robot.subsystems.ScissorBack;
 /**
  * An example command.  You can replace me with your own command.
  */
-public class climbUpBack extends Command {
-  public climbUpBack() {
+public class climbDownBack extends Command {
+  public climbDownBack() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.scissor2);
   }
@@ -17,7 +17,7 @@ public class climbUpBack extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    if(ScissorBack.isLimitUpReached()){
+    if(ScissorBack.isLimitDownReached()){
       Robot.scissor2.backScissorStop();
       isFinished();
     }
@@ -29,7 +29,7 @@ public class climbUpBack extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-      Robot.scissor2.backScissorUp();
+      Robot.scissor2.backScissorDown();
   }
 
   // Make this return true when this Command no longer needs to run execute()

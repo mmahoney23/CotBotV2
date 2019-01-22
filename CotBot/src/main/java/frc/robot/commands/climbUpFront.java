@@ -2,6 +2,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.subsystems.ScissorFront;
 
 /**
  * An example command.  You can replace me with your own command.
@@ -15,7 +16,13 @@ public class climbUpFront extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-      setTimeout(2);
+      if(ScissorFront.isLimitUpReached()){
+        Robot.scissor1.frontScissorStop();
+        isFinished();
+      }
+      else{
+        //the rest of the code runs
+      }
   }
 
   // Called repeatedly when this Command is scheduled to run
