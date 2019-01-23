@@ -62,11 +62,41 @@ public class OI {
 		JoystickButton gameLeftTrigger = new JoystickButton(gamepad, 7);
     JoystickButton gameRightTrigger = new JoystickButton(gamepad, 8);
 
-    leftTrigger.whenPressed(new rhinoOut());
+    leftTrigger.whenPressed(new rhinoIn());
     leftTrigger.whenReleased(new rhinoStop());
     
-    rightTrigger.whenPressed(new rhinoIn());
+    rightTrigger.whenPressed(new rhinoOut());
     rightTrigger.whenReleased(new rhinoStop());
+
+    leftThree.whenPressed(new cargoOut());
+    leftThree.whenPressed(new cargoInStop());
+
+    rightThree.whenPressed(new cargoIn());
+    rightThree.whenReleased(new cargoInStop());
+
+    a.whenPressed(new cargoDown());
+    a.whenReleased(new cargoUpStop());
+
+    y.whenPressed(new cargoUp());
+    y.whenReleased(new cargoUpStop());
+
+    x.whenPressed(new cargoOut());
+    x.whenReleased(new cargoInStop());
+
+    b.whenPressed(new cargoIn());
+    b.whenReleased(new cargoInStop());
+
+    rightBumper.whenPressed(new climbDownFront());
+    rightBumper.whenReleased(new climbFrontStop());
+
+    leftBumper.whenPressed(new climbDownBack());
+    leftBumper.whenReleased(new climbBackStop());
+
+    gameRightTrigger.whenPressed(new climbUpFront());
+    gameRightTrigger.whenReleased(new climbFrontStop());
+
+    gameLeftTrigger.whenPressed(new climbUpBack());
+    gameLeftTrigger.whenReleased(new climbBackStop());
   }
 
   public static double getYInput() {
